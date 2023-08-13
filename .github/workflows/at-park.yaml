@@ -1,7 +1,11 @@
 name: End-to-end tests
 on:
- Schedule:
-  -cron: "*/15 * * * *"
+ schedule:
+  - cron: "35 8,11,14 * * 1-5"
+  - cron: "20 9,12 * * 1-5"
+  - cron: "5 10,13 * * 1-5"
+  - cron: "50 10,13 * * 1-5"
+  
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
