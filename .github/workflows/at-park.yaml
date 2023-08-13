@@ -1,11 +1,16 @@
 name: End-to-end tests
 on:
  schedule:
-  - cron: "35 8,11,14 * * 1-5"
-  - cron: "20 9,12 * * 1-5"
-  - cron: "5 10,13 * * 1-5"
-  - cron: "50 10,13 * * 1-5"
-  
+  - cron: "*/45 20-1/6 * * 0-4"
+#  - cron: "35 20,23 * * 0-4"
+#  - cron: "35 2 * * 1-5"
+#  - cron: "20 21,0 * * 0-4"
+#  - cron: "20 0 * * 1-5"
+#  - cron: "5 22,1 * * 0-4"
+#  - cron: "5 1 * * 1-5"
+#  - cron: "50 22 * * 0-4"
+#  - cron: "50 1 * * 1-5"
+    
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
