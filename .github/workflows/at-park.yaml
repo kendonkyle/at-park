@@ -1,7 +1,15 @@
 name: End-to-end tests
 on:
- Schedule:
-  -cron: "*/15 * * * *"
+ schedule:
+  - cron: "35 20,23 * * 0-4"
+  - cron: "35 2 * * 1-5"
+  - cron: "20 21,0 * * 0-4"
+  - cron: "20 0 * * 1-5"
+  - cron: "5 22,1 * * 0-4"
+  - cron: "5 1 * * 1-5"
+  - cron: "50 22 * * 0-4"
+  - cron: "50 1 * * 1-5"
+    
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
@@ -12,3 +20,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           spec: cypress/e2e/atpark.cy.js
+        env:
+          CYPRESS_USERNAME: ${{secrets.USERNAME}}
+          CYPRESS_PASSWORD: ${{secrets.PASSWORD}}  
+          CYPRESS_AREA_CODE: ${{env.AREA_CODE}} 
